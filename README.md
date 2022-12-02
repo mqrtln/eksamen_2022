@@ -1,3 +1,5 @@
+[![CI pipeline](https://github.com/mqrtln/eksamen_2022/actions/workflows/ci.yml/badge.svg)](https://github.com/mqrtln/eksamen_2022/actions/workflows/ci.yml)
+
 # DevOps med gode intensjoner
 
 ## Krav til leveransen
