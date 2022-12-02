@@ -314,6 +314,10 @@ at
 * Kode kan merges til main branch ved å lage en Pull request med minst en godkjenning
 * Kode kan merges til main bare når feature branchen som pull requesten er basert på, er verifisert av GitHub Actions.
 
+Gå inn i settings/branches Add, kall protection rulen for main, sjekk av "Require a pull request before merging" og "Require approvals" under denne. 
+Deretter, huk av Require status checks to pass before merging, og i søkefeltet, skriv in "build". 
+Sist men ikke minst, sjekk av "Do not allow bypassing the above settings". Og nå skal alt være ferdig og fint!
+
 ## Del 3 - Docker
 
 Applikasjonen er laget for å pushe et container image til Docker Hub. 
