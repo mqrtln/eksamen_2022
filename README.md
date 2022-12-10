@@ -328,6 +328,8 @@ Det ligger en ```Dockerfile``` i prosjektet, og en workflow fil som heter ```doc
 
 Beskriv hva du må gjøre for å få workflow til å fungere med din DockerHub konto? Hvorfor feiler workflowen? 
 
+Den første feilen er fordi github actionen klarer ikke å logge inn på din dockerhub konto, dette er fordi i yml filen har det blitt satt ned to variabler secrets.DOCKER_HUB_USERNAME og secrets.DOCKER_HUB_TOKEN , men disse refererer ikke til noe for øyeblikket. Så først må vi logge inn på dockerhub kontoen vår, så lage en access_token, kopiere denne, gå til settings i github og secrets, new secret, og kalle den DOCKER_HUB_TOKEN og sette in token i value, også må vi gjøre det samme for dockerhub brukernavnet ditt. Når dette er ferdig så kan actionen logge seg inn på dockerhub. 
+
 ### Oppgave 2
 
 Når du har fikset problemet i oppgave 1, og du forøker å kjøre applikasjonen fra Docker hub med for eksempel; 
