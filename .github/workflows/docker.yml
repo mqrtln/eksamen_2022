@@ -19,6 +19,7 @@ jobs:
 
       - name: Build with Maven
         # Jim; Just skipping test for now
+        # Trying to fix this now
         run: mvn --no-transfer-progress -B package -DskipTests --file pom.xml
 
       - name: Login to Docker Hub
