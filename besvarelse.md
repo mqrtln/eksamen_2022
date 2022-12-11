@@ -1,3 +1,6 @@
+
+### SVAR OPPGAVE 1:1
+
 * En vanlig respons på mange feil under release av ny funksjonalitet er å gjøre det mindre hyppig, og samtidig forsøke å legge på mer kontroll og QA. Hva er problemet med dette ut ifra et DevOps perspektiv, og hva kan være en bedre tilnærming?
 
 * Teamet overleverer kode til en annen avdelng som har ansvar for drift - hva er utfordringen med dette ut ifra et DevOps perspektiv, og hvilke gevinster kan man få ved at team han ansvar for både drift- og utvikling? 
@@ -8,7 +11,7 @@
 
 
 
-### SVAR
+### SVAR OPPGAVE2:3
 Gå inn i settings/branches Add, kall protection rulen for main, sjekk av "Require a pull request before merging" og "Require approvals" under denne. 
 Deretter, huk av Require status checks to pass before merging, og i søkefeltet, skriv in "build". 
 Sist men ikke minst, sjekk av "Do not allow bypassing the above settings". Og nå skal alt være ferdig og fint!
@@ -17,14 +20,14 @@ Sist men ikke minst, sjekk av "Do not allow bypassing the above settings". Og n�
 
 
 
-### SVAR
+### SVAR OPPGAVE 3:1
 Den første feilen er fordi github actionen klarer ikke å logge inn på din dockerhub konto, dette er fordi i yml filen har det blitt satt ned to variabler secrets.DOCKER_HUB_USERNAME og secrets.DOCKER_HUB_TOKEN , men disse refererer ikke til noe for øyeblikket. Så først må vi logge inn på dockerhub kontoen vår, så lage en access_token, kopiere denne, gå til settings i github og secrets, new secret, og kalle den DOCKER_HUB_TOKEN og sette in token i value, også må vi gjøre det samme for dockerhub brukernavnet ditt. Når dette er ferdig så kan actionen logge seg inn på dockerhub. Hadde trøbbel med å kunne bygge og pushe repoet med ${secret.DOCKER_HUB_USER}/shopifly:latest her, fikk en feilmelding som jeg ikke klarte å fikse, endte med å bare bruke dockerhub brukernavnet mitt for å få det til å funke. 
 
 
 
 
 
-### SVAR
+### SVAR OPPGAVE 3:3
 1. Legge til egne AWS_ACCESS_KEY_ID og AWS_ACCESS_KEY secrets i settings -> secrets -> actions -> create new repository secret (man finner disse i egen aws user account IAM account -> Users -> ditt aws brukernavn -> security credentials -> Create access key
 
 i docker.yml gjør endringene som er markert med <---> i filen
