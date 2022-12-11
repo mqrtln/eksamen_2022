@@ -34,6 +34,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_REPOSITORY_AND_USERNAME }}/shopifly:latest
-          
+          tags: ${{ secrets.DOCKER_HUB_REPOSITORY_AND_USERNAME }}:latest
+        uses: docker://stable
           # ${{ secrets.DOCKER_HUB_USERNAME }}
