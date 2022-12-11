@@ -1,16 +1,20 @@
 
 ### SVAR OPPGAVE 1:1
+* Hva er utfordringene med dagens systemutviklingsprosess - og hvordan vil innføring av DevOps kunne være med på å løse disse? Hvilke DevOps prinsipper blir brutt?
+Utfordringene med dagens systemutviklingsprosess er "bloat" eller avfall, som innebærer unødvendige ventetider, delegering av oppgaver og overleveringer. Et annet problem er uoppnåelige "deadlines" som øker stress og "dårlig hyppighet" som kan risikere å redusere kvaliteten på produktet. Det er ekstremt mye isolering av arbeidsoppgaver, som backend->frontend->testere->QA->produkteiere->managment som forværrer kommunikasjon og god oversikt. Alle disse er brutte DevOps prinsipper. DevOps sitt hovedmål er bedre samarbeid og kommunikasjon gjennom hele teamet, og ved å dele arbeidsoppgaver, kontinuerlig release til deployment, og innføre automatiske tester og metrics til systenet så kan mye av bloaten bli redusert
 
 * En vanlig respons på mange feil under release av ny funksjonalitet er å gjøre det mindre hyppig, og samtidig forsøke å legge på mer kontroll og QA. Hva er problemet med dette ut ifra et DevOps perspektiv, og hva kan være en bedre tilnærming?
 
+Problemet med dette i et DevOps perspektiv er at dette kan ende med å generere mye "avfall" og ende opp med at det muligens bare er et "ledd" som hindrer hele systemet å gå framover. Det ender med isolering av arbeidsoppgavene, som kan medføre en generell ansvarsfraskrivelse av de enkelte isolerte leddene noe som gær sterkt imot DevOps prinsippene. En bedre tilnærming er å automatisere mye av QA og kontroll leddene, samt dele alle arbeidsoppgavene med alle i teamet, sånn at alle har ansvar for å fortsette livssyklusen og hindre unødvendige ventetider.
+
 * Teamet overleverer kode til en annen avdelng som har ansvar for drift - hva er utfordringen med dette ut ifra et DevOps perspektiv, og hvilke gevinster kan man få ved at team han ansvar for både drift- og utvikling?
 
-Det blir et for stort skille mellom to "lag" i systemet, når man splitter opp inn i forskjellige "lag", ender det opp med verre koordinasjon og kommunikasjon mellom gruppene. Ved at et helt team har ansvar for både drift og utvikling gir det bedre innsikt til de personene i teamet om hva som trengs å gjøre for å oppnå god flyt. Hvis vi splitter opp blir det mer "kast det over gjerdet og glem det" taktikk fra det splittet teamet, som leder til dårlige vaner, og mindre oversiktlig helhet i hva teamet prøver å oppnå. Ved at alle er med på alt, gir det en bedre forståelse på hva som er viktig å ha med, samt,  
+Utfordringen med å isolere arbeidsoppgavene i et team kan ende opp med at det blir verre koordinasjon og kommunikasjon mellom gruppene. DevOps sitt hovedmål er å fjerne disse barrierene. Gevinsten med dette er når et helt team, og med dette hver enkeltperson påskriver ansvar for både drift og utvikling resulterer i bedre innsikt til de personene i teamet om hva som trengs å gjøre for å oppnå god flyt. Når teams blir splittet opp i roller som de bare har ansvar for, uten noe reel innsikt i hva de andre på teamet gjør, kan dette medføre ansvarsforskrivelse, dårlige vaner og ignoranse som reduserer hastigheten, kvaliteten og sikkerheten til produktet.
 
 * Å release kode ofte kan også by på utfordringer. Beskriv hvilke- og hvordan vi kan bruke DevOps prinsipper til å redusere
   eller fjerne risiko ved hyppige leveraner.
 
-Vi kan bruke forskjellige automatiserte verktøy for å unngå menneskelig feil samt, gi en helhetlig oversikt over alle "leddene" som må til før koden blir deployet til release. Et viktig DevOps prinsipp som hører hjemme her er måling, ved å bruke måleverktøy som "metrics". "alarms" og "timers" så får vi en helhetlig oversikt på helsen til produktet og får også pinpointet de feilene som etter hvert kommer opp. 
+Vi kan bruke forskjellige automatiserte verktøy for å unngå menneskelig feil samt, gi en helhetlig oversikt over alle "leddene" som må til før koden blir pushet til produksjon. Et viktig DevOps prinsipp som hører hjemme her er måling, ved å bruke måleverktøy som "metrics". "alarms" og "timers" så får vi en helhetlig oversikt på helsen til produktet og får også pinpointet de feilene som etter hvert kommer opp. 
 
 
 
