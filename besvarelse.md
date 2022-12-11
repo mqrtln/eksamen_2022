@@ -4,13 +4,14 @@
 * En vanlig respons på mange feil under release av ny funksjonalitet er å gjøre det mindre hyppig, og samtidig forsøke å legge på mer kontroll og QA. Hva er problemet med dette ut ifra et DevOps perspektiv, og hva kan være en bedre tilnærming?
 
 * Teamet overleverer kode til en annen avdelng som har ansvar for drift - hva er utfordringen med dette ut ifra et DevOps perspektiv, og hvilke gevinster kan man få ved at team han ansvar for både drift- og utvikling?
- ```` 
+
 Det blir et for stort skille mellom to "lag" i systemet, når man splitter opp inn i forskjellige "lag", ender det opp med verre koordinasjon og kommunikasjon mellom gruppene. Ved at et helt team har ansvar for både drift og utvikling gir det bedre innsikt til de personene i teamet om hva som trengs å gjøre for å oppnå god flyt. Hvis vi splitter opp blir det mer "kast det over gjerdet og glem det" taktikk fra det splittet teamet, som leder til dårlige vaner, og mindre oversiktlig helhet i hva teamet prøver å oppnå. Ved at alle er med på alt, gir det en bedre forståelse på hva som er viktig å ha med, samt,  
-````
+
 * Å release kode ofte kan også by på utfordringer. Beskriv hvilke- og hvordan vi kan bruke DevOps prinsipper til å redusere
   eller fjerne risiko ved hyppige leveraner.
-  ```Vi kan bruke forskjellige automatiserte verktøy for å unngå menneskelig feil samt, gi en helhetlig oversikt over alle "leddene" som må til før koden blir deployet til release. Et viktig DevOps prinsipp som hører hjemme her er måling, ved å bruke måleverktøy som "metrics". "alarms" og "timers" så får vi en helhetlig oversikt på helsen til produktet og får også pinpointet de feilene som etter hvert kommer opp. 
-  ````
+
+Vi kan bruke forskjellige automatiserte verktøy for å unngå menneskelig feil samt, gi en helhetlig oversikt over alle "leddene" som må til før koden blir deployet til release. Et viktig DevOps prinsipp som hører hjemme her er måling, ved å bruke måleverktøy som "metrics". "alarms" og "timers" så får vi en helhetlig oversikt på helsen til produktet og får også pinpointet de feilene som etter hvert kommer opp. 
+
 
 
 
