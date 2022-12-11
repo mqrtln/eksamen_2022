@@ -1,7 +1,7 @@
 FROM maven:3.6.3-jdk-11 as build
 WORKDIR /app
 COPY . .
-RUN mvn --no-transfer-progress -B package --file pom.xml
+RUN mvn --no-transfer-progress package --file pom.xml
 
 
 FROM adoptopenjdk/openjdk11
