@@ -315,6 +315,7 @@ at
 * Kode kan merges til main branch ved å lage en Pull request med minst en godkjenning
 * Kode kan merges til main bare når feature branchen som pull requesten er basert på, er verifisert av GitHub Actions.
 
+### SVAR
 Gå inn i settings/branches Add, kall protection rulen for main, sjekk av "Require a pull request before merging" og "Require approvals" under denne. 
 Deretter, huk av Require status checks to pass before merging, og i søkefeltet, skriv in "build". 
 Sist men ikke minst, sjekk av "Do not allow bypassing the above settings". Og nå skal alt være ferdig og fint!
@@ -329,7 +330,8 @@ Det ligger en ```Dockerfile``` i prosjektet, og en workflow fil som heter ```doc
 
 Beskriv hva du må gjøre for å få workflow til å fungere med din DockerHub konto? Hvorfor feiler workflowen? 
 
-Den første feilen er fordi github actionen klarer ikke å logge inn på din dockerhub konto, dette er fordi i yml filen har det blitt satt ned to variabler secrets.DOCKER_HUB_USERNAME og secrets.DOCKER_HUB_TOKEN , men disse refererer ikke til noe for øyeblikket. Så først må vi logge inn på dockerhub kontoen vår, så lage en access_token, kopiere denne, gå til settings i github og secrets, new secret, og kalle den DOCKER_HUB_TOKEN og sette in token i value, også må vi gjøre det samme for dockerhub brukernavnet ditt. Når dette er ferdig så kan actionen logge seg inn på dockerhub. 
+### SVAR
+Den første feilen er fordi github actionen klarer ikke å logge inn på din dockerhub konto, dette er fordi i yml filen har det blitt satt ned to variabler secrets.DOCKER_HUB_USERNAME og secrets.DOCKER_HUB_TOKEN , men disse refererer ikke til noe for øyeblikket. Så først må vi logge inn på dockerhub kontoen vår, så lage en access_token, kopiere denne, gå til settings i github og secrets, new secret, og kalle den DOCKER_HUB_TOKEN og sette in token i value, også må vi gjøre det samme for dockerhub brukernavnet ditt. Når dette er ferdig så kan actionen logge seg inn på dockerhub. Hadde trøbbel med å kunne bygge og pushe repoet med ${secret.DOCKER_HUB_USER}/shopifly:latest her, fikk en feilmelding som jeg ikke klarte å fikse, endte med å bare bruke dockerhub brukernavnet mitt for å få det til å funke. 
 
 ### Oppgave 2
 
@@ -372,6 +374,39 @@ Et privat ECR repository i AWS er en bedre løsning.
 * Lag dit eget ECR repository med kandidatnummer som navn, enten ved hjelp av UI - eller ved hjelp av CLI.
 * Endre ```docker.yml```, workflow til å pushe docker container til Amazon ECR, istedet for docker hub
 * Beskriv deretter med egne ord hva sensor må gjøre for å få sin fork til å laste opp container image til sitt eget ECR repo.
+
+### SVAR
+1. Legge til egne AWS_ACCESS_KEY_ID og AWS_ACCESS_KEY secrets i settings -> secrets -> actions -> create new repository secret (man finner disse i egen aws user account IAM account -> Users -> ditt aws brukernavn -> security credentials -> Create access key
+
+i docker.yml gjør endringene som er markert med <---> i filen
+```
+name: Docker build
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo 
+        uses: actions/checkout@v2
+          
+      - name: Build and push Docker image
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 244530008913.dkr.ecr.eu-west-1.amazonaws.com
+          rev=$(git rev-parse --short HEAD)
+          docker build . -t shopifly <EV. ANNET IMAGE NAVN HVIS ØNSKET>
+          docker tag shopifly <EV. ANNET IMAGE NAVN HVIS ØNSKET> 244530008913.dkr.ecr.eu-west-1.amazonaws.com/<DITT ECR REPO>:$rev
+          docker push 244530008913.dkr.ecr.eu-west-1.amazonaws.com/<DITT ECR REPO>:$rev
+```
+
+
+
 * Docker workflow skal pushe et container image med en tag som er lik GitHub commit hash (id); for eksempel ```244530008913.dkr.ecr.eu-west-1.amazonaws.com/glenn_exam_practice:8234efc```
 
 ## Del 4 - Metrics, overvåkning og alarmer
