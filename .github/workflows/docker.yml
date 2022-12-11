@@ -36,4 +36,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_HUB_REPOSITORY_AND_USERNAME }}:latest
       - uses: docker://stable
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
           # ${{ secrets.DOCKER_HUB_USERNAME }}
