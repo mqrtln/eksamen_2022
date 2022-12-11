@@ -274,7 +274,7 @@ curl --location --request GET 'http://localhost:8080/carts' \
 ```
 
 ## Del 1 DevOps-prinsipper
-
+### SVAR besvarelse.md OPPGAVE1:1
 Beskriv med egne ord;
 
 * Hva er utfordringene med dagens systemutviklingsprosess - og hvordan vil innføring av DevOps kunne være med på å løse
@@ -329,7 +329,7 @@ Det ligger en ```Dockerfile``` i prosjektet, og en workflow fil som heter ```doc
 
 Beskriv hva du må gjøre for å få workflow til å fungere med din DockerHub konto? Hvorfor feiler workflowen? 
 
-###besvarelse.md oppgave 1:3
+### svar besvarelse.md oppgave 3:1
 
 ### Oppgave 2
 
