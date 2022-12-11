@@ -1,6 +1,6 @@
 FROM maven:3.6.3-jdk-11 as build
 WORKDIR /app
-COPY pom.xml .
+COPY . .
 RUN mvn --no-transfer-progress -B package --file pom.xml
 
 
