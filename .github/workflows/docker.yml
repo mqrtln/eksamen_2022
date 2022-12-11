@@ -16,8 +16,9 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
           cache: maven
-        uses: actions/checkout@v2
+          
       - name: Build and push Docker image
+        uses: actions/checkout@v2
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
