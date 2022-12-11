@@ -1,6 +1,7 @@
 
 ### SVAR OPPGAVE 1:1
 * Hva er utfordringene med dagens systemutviklingsprosess - og hvordan vil innføring av DevOps kunne være med på å løse disse? Hvilke DevOps prinsipper blir brutt?
+
 Utfordringene med dagens systemutviklingsprosess er "bloat" eller avfall, som innebærer unødvendige ventetider, delegering av oppgaver og overleveringer. Et annet problem er uoppnåelige "deadlines" som øker stress og "dårlig hyppighet" som kan risikere å redusere kvaliteten på produktet. Det er ekstremt mye isolering av arbeidsoppgaver, som backend->frontend->testere->QA->produkteiere->managment som forværrer kommunikasjon og god oversikt. Alle disse er brutte DevOps prinsipper. DevOps sitt hovedmål er bedre samarbeid og kommunikasjon gjennom hele teamet, og ved å dele arbeidsoppgaver, kontinuerlig release til deployment, og innføre automatiske tester og metrics til systenet så kan mye av bloaten bli redusert
 
 * En vanlig respons på mange feil under release av ny funksjonalitet er å gjøre det mindre hyppig, og samtidig forsøke å legge på mer kontroll og QA. Hva er problemet med dette ut ifra et DevOps perspektiv, og hva kan være en bedre tilnærming?
