@@ -1,4 +1,5 @@
 [![CI pipeline](https://github.com/mqrtln/eksamen_2022/actions/workflows/ci.yml/badge.svg)](https://github.com/mqrtln/eksamen_2022/actions/workflows/ci.yml)
+[![Docker build](https://github.com/mqrtln/eksamen_2022/actions/workflows/docker.yml/badge.svg)](https://github.com/mqrtln/eksamen_2022/actions/workflows/docker.yml)
 
 # DevOps med gode intensjoner
 
