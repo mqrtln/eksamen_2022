@@ -1,9 +1,9 @@
 FROM maven:3.6.3-jdk-11 as build
-WORKDIR /target
+WORKDIR /app
 COPY . .
-RUN mvn --no-transfer-progress package --file pom.xml
+RUN mvn --no-transfer-progress -DskipTests package --file pom.xml
 
 
 FROM adoptopenjdk/openjdk11
-COPY --from=build target/onlinestore-0.0.1-SNAPSHOT.jar /target/application.jar
-ENTRYPOINT ["java","-jar","/target/application.jar"]
+COPY --from=build /app/target/onlinestore-0.0.1-SNAPSHOT.jar /app/application.jar
+ENTRYPOINT ["java","-jar","/app/application.jar"]
