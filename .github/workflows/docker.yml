@@ -35,5 +35,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_REPOSITORY_AND_USERNAME }}:latest
-        uses: docker://stable
+      uses: docker://stable
           # ${{ secrets.DOCKER_HUB_USERNAME }}
