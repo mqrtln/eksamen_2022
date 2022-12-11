@@ -1,7 +1,7 @@
 FROM maven:3.6.3-jdk-11 as build
 COPY . /app
 WORKDIR /app
-RUN mvn clean package verify
+RUN mvn --no-transfer-progress -B package -DskipTests --file pom.xml
 
 
 FROM adoptopenjdk/openjdk11
