@@ -38,6 +38,6 @@ jobs:
       #    context: .
       #    file: ./Dockerfile
       #    push: true
-      #    tags: mqrtln/shopifly:latest
+      #    tags: ${{ secrets.DOCKER_HUB_USERNAME }}/shopifly:latest
           
-          # ${{ secrets.DOCKER_HUB_USERNAME }}/shopifly:latest did not work
+          # ${{ secrets.DOCKER_HUB_USERNAME }}/shopifly:latest did not work but i removed the working code for anonymity, but when i hardcoded my dockerhub username like username/shopifly:latest it worked
