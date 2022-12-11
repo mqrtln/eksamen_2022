@@ -6,5 +6,5 @@ RUN mvn --no-transfer-progress package --file pom.xml
 
 FROM adoptopenjdk/openjdk11
 WORKDIR /app
-COPY --from=build target/onlinestore-0.0.1-SNAPSHOT.jar /tmp/application.jar
+COPY --from=build target/onlinestore-0.0.1-SNAPSHOT.jar /target/application.jar
 ENTRYPOINT ["java","-jar","/app/application.jar"]
